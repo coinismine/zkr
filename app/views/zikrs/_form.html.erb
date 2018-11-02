@@ -1,0 +1,103 @@
+<%= form_with(model: zikr, local: true) do |form| %>
+  <% if zikr.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(zikr.errors.count, "error") %> prohibited this zikr from being saved:</h2>
+
+      <ul>
+      <% zikr.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h2>
+براہ مہربانی اپنی معلومات درج کریں
+ </h2>
+<div class="table-wrapper">
+  <div class="field">
+<h2>:آپ کا نام</h2>
+    <%= form.label :name%>
+    <%= form.text_field :name %>
+  </div>
+</div></br>
+----------------------------------------------------
+</br>
+<div class="table-wrapper">
+  <div class="field">
+    <h2>آپ کا شہر</h2>
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+</div>
+</br>
+----------------------------------------------------
+</br>
+<div class="table-wrapper">
+  <div class="field">
+    <h2>آپ کا ملک</h2>
+    <%= form.label :country %>
+    <%= form.text_field :country %>
+  </div>
+  </div>
+</br>
+  ----------------------------------------------------
+  </br>
+  <div class="table-wrapper">
+    <div class="field">
+      <h2>فون نمبر</h2>
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+  </div>
+</br>
+  ----------------------------------------------------
+  </br>
+  <div class="table-wrapper">
+    <div class="field">
+      <h2>آج کی تاریخ</h2>
+    <%= form.label :date %>
+    <%= form.datetime_select :date %>
+  </div>
+</div>
+</br>
+------------------------------------------------------
+</br>
+  <div class="field">
+    <div class="table-wrapper">
+
+        <h2>کلمہ طیبہ  :  لآ اِلَهَ اِلّا اللّهُ مُحَمَّدٌ رَسُوُل اللّهِ</h2>
+    <%= form.label :kalma_tayyaba %>
+    <%= form.number_field :kalma_tayyaba %>
+  </div>
+</div>
+</br>
+-------------------------------------------------------
+</br>
+  <div class="field">
+    <div class="table-wrapper">
+
+        <h2>درود شریفِ</h2>
+
+    <%= form.label :durud_sharif %>
+    <%= form.number_field :durud_sharif %>
+  </div>
+</div>
+</br>
+-------------------------------------------------------
+</br>
+  <div class="field">
+    <div class="table-wrapper">
+      <h2>استغفار  </h2>
+
+
+    <%= form.label :astagfaar %>
+    <%= form.number_field :astagfaar %>
+  </div>
+</div>
+</br>
+  <div class="table-wrapper">
+  <div class="actions"><h2>معلومات درج کرنے کے لئے کلک کریں</h2>
+    <%= form.submit %>
+  </div>
+  </div>
+<% end %>

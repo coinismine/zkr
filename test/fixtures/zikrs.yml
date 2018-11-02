@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  city: MyString
+  country: MyString
+  phone: 9.99
+  date: 2018-10-31 20:39:30
+  kalma_tayyaba: 1
+  durud_sharif: 1
+  astagfaar: 1
+
+two:
+  name: MyString
+  city: MyString
+  country: MyString
+  phone: 9.99
+  date: 2018-10-31 20:39:30
+  kalma_tayyaba: 1
+  durud_sharif: 1
+  astagfaar: 1

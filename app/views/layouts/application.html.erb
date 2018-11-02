@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<div class="header">
+  <a href="#default" class="logo">Zikr-o-Azkaar</a>
+  <div class="header-right">
+    <%= link_to 'Home', new_zikr_path %>
+    <%= link_to 'New Zikr', new_zikr_path %>
+      <% if current_user && current_user.admin %>
+    <%= link_to 'New User', new_user_registration_path %>
+      <%= link_to 'Index', zikrs_path %>
+    <% end %>
+    <%= link_to 'Sign Out', destroy_user_session_path %>
+  </div>
+</div>
+<html>
+  <head>
+    <title>Zkr</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <% if current_user && current_user.admin %>
+<%= link_to 'Sign In', new_user_session_path %>
+<%= link_to 'Sign Out', destroy_user_session_path %>
+<% end %>
+    <%= yield %>
+  </body>
+</html>

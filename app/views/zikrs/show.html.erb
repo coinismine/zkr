@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @zikr.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @zikr.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @zikr.country %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @zikr.phone %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @zikr.date %>
+</p>
+
+<p>
+  <strong>Kalma tayyaba:</strong>
+  <%= @zikr.kalma_tayyaba %>
+</p>
+
+<p>
+  <strong>Durud sharif:</strong>
+  <%= @zikr.durud_sharif %>
+</p>
+
+<p>
+  <strong>Astagfaar:</strong>
+  <%= @zikr.astagfaar %>
+</p>
+<% if current_user && current_user.admin %>
+<%= link_to 'Edit', edit_zikr_path(@zikr) %> |
+<%= link_to 'Back', zikrs_path %>
+<% end %>
+<%= link_to 'SIGN OUT ', destroy_user_session_path %>

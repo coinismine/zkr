@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+<% if current_user && current_user.admin %>
+<h1>Zikrs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>S.#</th>
+      <th>Name</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Phone</th>
+      <th>Date</th>
+      <th>Kalma tayyaba</th>
+      <th>Durud sharif</th>
+      <th>Astagfaar</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @zikrs.each do |zikr| %>
+      <tr>
+        <td><%= zikr.id %></td>
+        <td><%= zikr.name %></td>
+        <td><%= zikr.city %></td>
+        <td><%= zikr.country %></td>
+        <td><%= zikr.phone %></td>
+        <td><%= zikr.date %></td>
+        <td><%= zikr.kalma_tayyaba %></td>
+        <td><%= zikr.durud_sharif %></td>
+        <td><%= zikr.astagfaar %></td>
+
+        <td><%= link_to 'Show', zikr %></td>
+        <td><%= link_to 'Edit', edit_zikr_path(zikr) %></td>
+        <td><%= link_to 'Destroy', zikr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="dim">
+<div class="wrapme">
+<%= will_paginate @posts %>
+</div>
+</div>
+<br>
+<div class="table-wrapper">
+<h2>
+<%= link_to 'معلومات درج کرنے کے لئے کلک کریں', new_zikr_path %>
+</h2>
+</div>
